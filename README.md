@@ -1,6 +1,6 @@
-# NPM Frontend
+# Angular Material Menu
 
-Basic building structure with **NPM** for _frontend_ development.
+An Angular Material menu
 
 ## Requirements
 
