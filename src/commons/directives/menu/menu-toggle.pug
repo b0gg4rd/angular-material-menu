@@ -1,0 +1,15 @@
+md-button.md-raised.md-primary.md-button-toggle(
+  aria-expanded='{{ isOpen() }}',
+  ng-click='toggle()'
+)
+  div(
+    flex,
+    layout='row'
+  )
+    span {{ section.name }}
+    span(flex)
+    span.md-toggle-icon(ng-class='{ "toggled" : isOpen() }')
+      md-icon.material-icons(aria-label='arrow') keyboard_arrow_down
+ul.menu-toggle-list
+  li(ng-repeat='page in section.pages')
+    menu-link(section='page')

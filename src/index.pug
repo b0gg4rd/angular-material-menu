@@ -1,0 +1,100 @@
+include _mixins/link
+include _mixins/script
+
+doctype html
+html(
+  lang='en',
+  ng-app='MaterialMenu',
+  ng-controller='MaterialMenuController as ctrl'
+)
+  head
+    title Angular Material Menu
+
+    meta(charset='utf-8')
+    meta(
+      content='IE=edge',
+      http-equiv='X-UA-Compatible'
+    )
+    meta(
+      content='Sistema de Análisis y Prevención para Accidentes y Enfermedades',
+      name='description'
+    )
+    meta(
+      content='initial-scale=1',
+      name='viewport'
+    )
+
+    +link('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic')
+    +link('https://fonts.googleapis.com/icon?family=Material+Icons')
+    +link('bower_components/angular-material/angular-material.css')
+    +link('MaterialMenuStyles.css')
+
+  body(
+    layout='column',
+    ng-cloak
+  )
+    md-toolbar.md-whiteframe-4dp
+      .md-toolbar-tools
+        md-button.md-icon-button(
+          aria-label='Menu',
+          ng-click='ctrl.toggleSidenav()'
+        )
+          md-icon.material-icons(aria-label='Menu') menu
+        h3 Angular Material Menu
+    md-content(
+      flex,
+      layout='row',
+      role='navigation'
+    )
+      md-sidenav.site-sidenav(
+        layout='column',
+        md-component-id='left'
+      )
+        header.nav-header
+          a.logo(ng-href='/')
+            img(
+            alt='Logo',
+            src='assets/angular-logo.svg')
+        div(
+          flex,
+          role='navigation'
+        )
+          ul.side-menu
+            li(
+              ng-class='{ "sectionActive" : ctrl.isSectionSelected(section) }',
+              ng-repeat='section in ctrl.menu'
+            )
+              menu-link(
+                ng-if='section.type === "link" && section.active',
+                section='section'
+              )
+              menu-toggle(
+                ng-if='section.type === "toggle" && section.active',
+                section='section'
+              )
+      div(
+        flex,
+        role='main',
+        ui-view
+      )
+
+    +script('bower_components/script.js/dist/script.js')
+    +script('bower_components/angular/angular.js')
+    +script('bower_components/angular-ui-router/release/angular-ui-router.js')
+    +script('bower_components/angular-material/angular-material.js')
+    +script('bower_components/angular-animate/angular-animate.js')
+    +script('bower_components/angular-aria/angular-aria.js')
+
+    //- Commons
+    +script('commons/Commons.js')
+    +script('commons/services/LazyLoader.js')
+    +script('commons/models/MenuModel.js')
+    +script('commons/directives/menu/MenuLink.js')
+    +script('commons/directives/menu/MenuToggle.js')
+
+    //- MaterialMenu
+    +script('MaterialMenu.js')
+    +script('MaterialMenuConfig.js')
+    +script('MaterialMenuController.js')
+    +script('MaterialMenuRoutes.js')
+
