@@ -100,15 +100,6 @@
     this.isPageSelected = (page) => {
       currentPage === page
     }
-
-    /*
-    return {
-      requestAll : () => {
-        return $q.when(sections)
-      }
-    }
-    */
-
   }
 
 })()
