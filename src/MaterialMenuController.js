@@ -23,8 +23,6 @@
     MenuModel
       .requestAll()
         .then((sections) => {
-          $log.debug('return sections : ')
-          $log.debug(sections)
           this.menu = [].concat(sections)
         })
 
@@ -41,7 +39,8 @@
       MenuModel.toggleSelectSection(section)
     }
 
-    this.isSelected = (section) => {
+    this.isSelected = (page) => {
+      return MenuModel.isPageSelected(page)
     }
 
   }

@@ -1,6 +1,6 @@
 md-button.md-raised.md-primary(
   ng-class='{ "active" : isSelected() }',
   ng-click='focusSection()',
-  ui-sref='{{ section.state }}',
+  ui-sref='{{ section.url }}',
   ui-sref-active='active'
 ) {{ section.name }}

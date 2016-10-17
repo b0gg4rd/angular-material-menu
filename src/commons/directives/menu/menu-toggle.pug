@@ -12,4 +12,7 @@ md-button.md-raised.md-primary.md-button-toggle(
       md-icon.material-icons(aria-label='arrow') keyboard_arrow_down
 ul.menu-toggle-list
   li(ng-repeat='page in section.pages')
-    menu-link(section='page')
+    menu-link(
+      ng-if='page.active',
+      section='page'
+    )

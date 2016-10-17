@@ -22,6 +22,7 @@
 
         scope.focusSection = () => {
           controller.autoFocusContent = true
+          controller.toggleSidenav()
         }
       }
     }

@@ -12,6 +12,7 @@
   function MenuModel($q) {
 
     let openedSection = undefined
+    let currentPage   = undefined
 
     let sections = [
       {
@@ -25,7 +26,7 @@
             name   : 'Alta',
             type   : 'link',
             active : true,
-            url    : 'invoice.register',
+            url    : 'invoice-register',
             icon   : 'ic_storage'
           },
           {
@@ -33,7 +34,7 @@
             name   : 'Histórico',
             type   : 'link',
             active : true,
-            url    : 'invoice.list',
+            url    : 'invoice-historic',
             icon   : 'person'
           }
         ]
@@ -56,7 +57,7 @@
             key    : 301,
             name   : 'Nacionales',
             type   : 'link',
-            url    : 'products.national',
+            url    : 'product-national',
             active : true,
             icon   : 'ic_storage'
           },
@@ -64,16 +65,16 @@
             key    : 302,
             name   : 'Internacionales',
             type   : 'link',
-            url    : 'products.international',
-            active : false,
+            url    : 'product-international',
+            active : true,
             icon   : 'ic_storage'
           },
           {
             key    : 303,
             name   : 'Locales',
             type   : 'link',
-            url    : 'products.local',
-            active : true,
+            url    : 'product-local',
+            active : false,
             icon   : 'ic_storage'
           }
         ]
@@ -94,6 +95,10 @@
 
     this.selectSection = (section) => {
       openedSection = section
+    }
+
+    this.isPageSelected = (page) => {
+      currentPage === page
     }
 
     /*

@@ -65,11 +65,11 @@ html(
               ng-repeat='section in ctrl.menu'
             )
               menu-link(
-                ng-if='section.type === "link" && section.active',
+                ng-if='section.active && section.type === "link"',
                 section='section'
               )
               menu-toggle(
-                ng-if='section.type === "toggle" && section.active',
+                ng-if='section.active && section.type === "toggle"',
                 section='section'
               )
       div(
