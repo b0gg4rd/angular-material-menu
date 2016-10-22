@@ -1,7 +1,7 @@
 {
-  "name"        : "npm-frontend",
-  "version"     : "0.1.0-SNAPSHOT",
-  "description" : "Basic building structure with NPM to frontend development",
+  "name"         : "angular-material-menu",
+  "version"      : "0.1.0-SNAPSHOT",
+  "description" : "An Angular Material menu",
   "homepage"    : "",
   "author"      : "Fernando Cruz",
   "license"     : "",
@@ -19,7 +19,7 @@
   },
 
   "scripts": {
-    "postinstall"      : "mkdir dist",
+    "postinstall"      : "mkdir dist && bower install",
 
     "bower:help"       : "bower help",
 
@@ -46,7 +46,7 @@
 
     "live-server:help" : "live-server --help",
 
-    "prestart"         : "npm update && npm run build && bower update -s",
-    "start"            : "parallelshell \"live-server --quiet --port=9876 dist\" \"npm run build:watch\" "
+    "prestart"         : "npm update && bower update && npm run build",
+    "start"            : "parallelshell \"live-server --port=9876 --mount=\/bower_components:bower_components dist\" \"npm run build:watch\" "
   }
 }
