@@ -42,7 +42,7 @@
     "prebuild"         : "npm run clean",
     "build"            : "npm run compile:assets && npm run compile:css && npm run compile:html && npm run compile:js",
 
-    "build:watch"      : "parallelshell -v \"npm run watch:assets\" \"npm run watch:css\" \"npm run watch:html\" \"npm run watch:js\"",
+    "build:watch"      : "parallelshell -v \"npm run watch:assets\" \"npm run watch:css\" \"npm run watch:html\" \"npm run watch:js\" ",
 
     "live-server:help" : "live-server --help",
 
